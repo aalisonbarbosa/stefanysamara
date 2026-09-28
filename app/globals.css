@@ -115,7 +115,7 @@
   }
 
   body {
-    overscroll-behavior: none;
+    /* overscroll-behavior: none; */
     @apply bg-surface text-on-surface font-body-md text-body-md antialiased;
   }
 
@@ -126,4 +126,8 @@
   ::-webkit-scrollbar {
     display: none;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
