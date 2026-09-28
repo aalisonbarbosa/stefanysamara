@@ -80,7 +80,7 @@ export const SERVICES: Service[] = [
     description:
       "Remoção delicada dos pelos, deixando a pele mais lisa e bem cuidada.",
     src: "/depilacao-buco.jpg",
-    duration: 20,
+    duration: 10,
     price: 10,
     category: "complementar",
     benefits: [
@@ -99,7 +99,7 @@ export const SERVICES: Service[] = [
     title: "Depilação de Axilas",
     description: "Cuidado e conforto para deixar a pele mais lisa e suave.",
     src: "/depilacao-axilas.jpg",
-    duration: 30,
+    duration: 20,
     price: 20,
     category: "complementar",
     benefits: [
