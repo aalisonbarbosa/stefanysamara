@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-surface: #fcf9f4;
+  --color-surface-dim: #dcdad5;
+  --color-surface-bright: #fcf9f4;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3ee;
+  --color-surface-container: #f0ede9;
+  --color-surface-container-high: #ebe8e3;
+  --color-surface-container-highest: #e5e2dd;
+  --color-on-surface: #1c1c19;
+  --color-on-surface-variant: #444748;
+  --color-outline: #747878;
+  --color-outline-variant: #c4c7c7;
+  --color-primary: #171717;
+  --color-on-primary: #ffffff;
+  --color-secondary: #8b7565;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #f9ddca;
+  --color-on-secondary-container: #756051;
+  --color-tertiary: #c8a96b;
+  --color-on-tertiary: #171717;
+
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-space-2xl: 4rem;
+  --spacing-margin: 1.25rem;
+  --spacing-margin-desktop: 3rem;
+  --spacing-gutter: 1.25rem;
+  --spacing-gutter-desktop: 2rem;
+
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-headline-sm: var(--font-display);
+  --font-headline-md: var(--font-display);
+  --font-headline-lg: var(--font-display);
+  --font-headline-lg-mobile: var(--font-display);
+  --font-display-mobile: var(--font-display);
+  --font-label-sm: var(--font-body);
+  --font-label-md: var(--font-body);
+  --font-label-lg: var(--font-body);
+  --font-body-sm: var(--font-body);
+  --font-body-md: var(--font-body);
+  --font-body-lg: var(--font-body);
+  --font-title-md: var(--font-body);
+  --font-title-lg: var(--font-body);
+
+  --text-label-sm: 11px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--letter-spacing: 0.08em;
+
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.05em;
+
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 20px;
+
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-lg--letter-spacing: 0.02em;
+
+  --text-body-md: 15px;
+  --text-body-md--line-height: 24px;
+
+  --text-title-md: 16px;
+  --text-title-md--line-height: 24px;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+
+  --text-title-lg: 20px;
+  --text-title-lg--line-height: 28px;
+
+  --text-headline-sm: 22px;
+  --text-headline-sm--line-height: 30px;
+
+  --text-headline-md: 28px;
+  --text-headline-md--line-height: 36px;
+
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+
+  --text-display-mobile: 38px;
+  --text-display-mobile--line-height: 46px;
+  --text-display-mobile--letter-spacing: -0.01em;
+
+  --text-headline-lg: 40px;
+  --text-headline-lg--line-height: 48px;
+  --text-headline-lg--letter-spacing: -0.015em;
+
+  --text-display: 56px;
+  --text-display--line-height: 64px;
+  --text-display--letter-spacing: -0.02em;
+
+  --shadow-sunlight:
+    0 12px 32px -4px rgba(23, 23, 23, 0.06),
+    0 4px 12px -2px rgba(139, 117, 101, 0.04);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    overscroll-behavior: none;
+    @apply bg-surface text-on-surface font-body-md text-body-md antialiased;
+  }
+
+  ::selection {
+    @apply bg-secondary-container text-on-secondary-container;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
