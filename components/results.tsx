@@ -9,8 +9,8 @@ const INSTAGRAM_URL = "https://instagram.com/stefanysamara.unique";
 const RESULTS = [
   {
     alt: "Resultado de design de sobrancelhas",
-    before: "/designer-personalizado-antes.jpeg",
-    after: "/designer-personalizado.jpeg",
+    before: "/design-personalizado-antes.jpeg",
+    after: "/design-personalizado.jpeg",
   },
   {
     alt: "Resultado de design de sobrancelhas",
