@@ -1,10 +1,12 @@
 import { FaWhatsapp } from "react-icons/fa";
 
-const WHATSAPP_URL =
-  "https://wa.me/558387022712?text=Ol%C3%A1,%20gostaria%20de%20reservar%20um%20hor%C3%A1rio";
 const INSTAGRAM_URL = "https://instagram.com/stefanysamara.unique";
 
-export default function Footer() {
+interface FooterProps {
+  onBooking: () => void;
+}
+
+export default function Footer({ onBooking }: FooterProps) {
   return (
     <footer className="w-full bg-surface-container py-space-2xl border-t border-outline-variant/30">
       <div className="max-w-7xl mx-auto px-margin lg:px-margin-desktop">
@@ -48,15 +50,13 @@ export default function Footer() {
               Garanta seu horário com antecedência e desfrute de um atendimento
               sob medida.
             </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-primary text-surface font-body text-label-md px-space-lg py-2.5 rounded-lg hover:bg-neutral-800 transition-all font-semibold shadow-sm"
+            <button
+              onClick={onBooking}
+              className="inline-flex items-center justify-center gap-2 bg-primary text-surface font-body text-label-md px-space-lg py-2.5 rounded-lg hover:bg-neutral-800 transition-all font-semibold shadow-sm cursor-pointer"
             >
               <FaWhatsapp className="w-4 h-4" />
               <span>Reservar Horário</span>
-            </a>
+            </button>
           </div>
         </div>
         <div className="mt-space-xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body text-label-sm border-t border-outline-variant/30 font-medium">

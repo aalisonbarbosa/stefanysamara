@@ -12,10 +12,11 @@ const NAV_LINKS = [
   { label: "Contato", href: "#contato" },
 ];
 
-const WHATSAPP_URL =
-  "https://wa.me/558387022712?text=Ol%C3%A1,%20gostaria%20de%20reservar%20um%20hor%C3%A1rio";
+interface HeaderProps {
+  onBooking: () => void;
+}
 
-export default function Header() {
+export default function Header({ onBooking }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -55,15 +56,13 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-space-md">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center justify-center gap-2 bg-primary text-surface font-body text-label-lg px-space-lg py-2.5 hover:bg-neutral-800 transition-all shadow-sm font-semibold tracking-wide rounded-full"
+          <button
+            onClick={onBooking}
+            className="hidden sm:inline-flex items-center justify-center gap-2 bg-primary text-surface font-body text-label-lg px-space-lg py-2.5 hover:bg-neutral-800 transition-all shadow-sm font-semibold tracking-wide rounded-full cursor-pointer"
           >
             <FaWhatsapp className="w-4 h-4" />
             <span>Agendar</span>
-          </a>
+          </button>
 
           {/* Mobile menu button */}
           <button
@@ -95,16 +94,13 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-              className="mt-space-md inline-flex items-center justify-center gap-2 bg-primary text-surface font-body text-label-lg px-space-lg py-3 rounded-full font-semibold"
+            <button
+              onClick={onBooking}
+              className="mt-space-md inline-flex items-center justify-center gap-2 bg-primary text-surface font-body text-label-lg px-space-lg py-3 rounded-full font-semibold cursor-pointer"
             >
               <FaWhatsapp className="w-4 h-4" />
               <span>Agendar atendimento</span>
-            </a>
+            </button>
           </nav>
         </div>
       )}

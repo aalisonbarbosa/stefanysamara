@@ -1,9 +1,12 @@
+"use client";
+
 import { FaWhatsapp } from "react-icons/fa";
 
-const WHATSAPP_URL =
-  "https://wa.me/558387022712?text=Ol%C3%A1,%20gostaria%20de%20reservar%20um%20hor%C3%A1rio";
+interface LocationProps {
+  onBooking: () => void;
+}
 
-export default function Location() {
+export default function Location({ onBooking }: LocationProps) {
   return (
     <section id="contato" className="w-full py-space-2xl bg-surface">
       <div className="max-w-7xl mx-auto px-margin lg:px-margin-desktop">
@@ -22,15 +25,13 @@ export default function Location() {
             para receber você.
           </p>
           <div className="flex justify-center mt-space-sm">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-space-sm bg-primary text-surface font-body text-label-lg px-space-xl py-space-md rounded-full shadow-md hover:bg-neutral-800 transition-all text-center font-semibold tracking-wide"
+            <button
+              onClick={onBooking}
+              className="inline-flex items-center justify-center gap-space-sm bg-primary text-surface font-body text-label-lg px-space-xl py-space-md rounded-full shadow-md hover:bg-neutral-800 transition-all text-center font-semibold tracking-wide cursor-pointer"
             >
               <FaWhatsapp className="w-5 h-5" />
               <span>Agendar atendimento</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>

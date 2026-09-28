@@ -1,9 +1,12 @@
+"use client";
+
 import { FaWhatsapp } from "react-icons/fa";
 
-const WHATSAPP_URL =
-  "https://wa.me/558387022712?text=Ol%C3%A1,%20gostaria%20de%20reservar%20um%20hor%C3%A1rio";
+interface HeroProps {
+  onBooking: () => void;
+}
 
-export default function Hero() {
+export default function Hero({ onBooking }: HeroProps) {
   return (
     <section
       id="inicio"
@@ -30,15 +33,13 @@ export default function Hero() {
           “Elegância em cada traço”
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-space-md w-full sm:w-auto justify-center">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm bg-primary text-surface font-body text-label-lg px-space-xl py-space-md rounded-full shadow-md hover:bg-neutral-800 transition-all text-center font-semibold tracking-wide"
+          <button
+            onClick={onBooking}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm bg-primary text-surface font-body text-label-lg px-space-xl py-space-md rounded-full shadow-md hover:bg-neutral-800 transition-all text-center font-semibold tracking-wide cursor-pointer"
           >
             <FaWhatsapp className="w-5 h-5" />
             <span>Agendar atendimento</span>
-          </a>
+          </button>
           <a
             href="#servicos"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-surface/90 border border-secondary/30 text-on-surface font-body text-label-lg px-space-lg py-space-md rounded-full hover:bg-surface-container transition-all text-center shadow-xs font-semibold"
