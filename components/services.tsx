@@ -121,27 +121,31 @@ function ServiceCard({ service, onDetails, onBooking }: ServiceCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
           className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
-
-        {/* Duração */}
-        <div className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-surface/95 px-3 py-1.5 font-body text-[10px] font-semibold text-on-surface shadow-sm backdrop-blur">
-          <FiClock className="h-3.5 w-3.5 text-secondary" />
-          {formatDuration(service.duration)}
-        </div>
       </div>
 
       {/* Conteúdo */}
       <div className="flex flex-1 flex-col p-space-lg">
         <div>
-          <div className="flex items-start justify-between gap-3">
-            <h3 className="font-display text-headline-sm leading-tight text-on-surface">
-              {service.title}
-            </h3>
+          {/* Título */}
+          <h3 className="font-display text-headline-sm leading-tight text-on-surface">
+            {service.title}
+          </h3>
 
-            <span className="shrink-0 font-body text-sm font-semibold text-secondary">
+          {/* Duração + Preço */}
+          <div className="mt-1.5 flex items-center gap-2 font-body text-xs">
+            <span className="inline-flex items-center gap-1.5 text-on-surface-variant">
+              <FiClock className="h-3.5 w-3.5 text-secondary" />
+              {formatDuration(service.duration)}
+            </span>
+
+            <span className="text-outline-variant">-</span>
+
+            <span className="font-semibold text-secondary">
               {formatPrice(service.price)}
             </span>
           </div>
 
+          {/* Descrição */}
           <p className="mt-space-sm line-clamp-3 font-body text-body-sm leading-5 text-on-surface-variant">
             {service.description}
           </p>
